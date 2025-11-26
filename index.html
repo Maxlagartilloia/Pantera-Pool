@@ -68,7 +68,7 @@
 <header class="bg-black/70 backdrop-blur-md sticky top-0 z-40 shadow-lg">
     <div class="container mx-auto px-5 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <!-- LOGO GRANDE -->
+            <!-- LOGO GRANDE (reemplaza por tu archivo local) -->
             <img src="IMG-0305.png" class="h-28 md:h-32 drop-shadow-xl" alt="Logo Pantera Pool">
             <span class="font-bold text-2xl md:text-3xl text-[#00E676]">Pantera Pool</span>
         </div>
@@ -82,7 +82,7 @@
         <button onclick="showPage('checkout')" class="relative bg-[#00E676] text-black px-4 py-2 rounded-full font-bold">
             <i class="fas fa-shopping-cart"></i>
             <span id="cart-count"
-                class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                  class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
         </button>
     </div>
 </header>
@@ -134,6 +134,32 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- JUEGO EN LA PÁGINA PRINCIPAL -->
+    <section id="juego" class="py-16 px-6">
+        <h3 class="text-center text-3xl font-bold text-[#00E676] mb-2">
+            Juega pool mientras esperas tu pedido 🎱
+        </h3>
+        <p class="text-center text-gray-200 mb-6">
+            Controla la bola 8 para romper los bloques tipo bolas de billar. Es un mini-juego para pasar el rato 😄
+        </p>
+
+        <div class="flex justify-center">
+            <canvas id="pool-breakout" width="340" height="220"
+                    class="rounded-2xl border border-white/20 bg-[#04402b] shadow-xl"></canvas>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-5">
+            <button id="game-start"
+                    class="bg-[#00E676] text-black font-bold px-6 py-2 rounded-full flex items-center gap-2">
+                Disparar <span>🎱</span>
+            </button>
+            <button id="game-reset"
+                    class="bg-black/70 border border-white/30 px-6 py-2 rounded-full text-sm">
+                Reiniciar mesa
+            </button>
         </div>
     </section>
 </main>
@@ -199,42 +225,487 @@
             </button>
         </div>
     </div>
+</main>
 
-    <!-- MINI MESA DE BILLAR (JUEGO VISUAL) -->
-    <section class="mt-16 pb-4">
-        <h3 class="text-center text-2xl font-bold text-[#00E676] mb-2">Mini mesa de billar 🎱</h3>
-        <p class="text-center text-gray-200 text-sm mb-4">
-            Mesa de billar estilo Pantera Pool mientras cierras tu pedido.
-        </p>
 
-        <div class="flex justify-center">
-            <div class="relative w-[320px] h-[180px] rounded-2xl border border-white/30 bg-[#04402b] shadow-lg overflow-hidden">
-                <!-- Bordes tipo banda -->
-                <div class="absolute inset-2 border-4 border-[#032117] rounded-xl"></div>
+<!-- FOOTER -->
+<footer id="footer-contact" class="bg-black/70 mt-20 py-12 text-center">
+    <h3 class="text-xl font-bold text-[#00E676] mb-4">Pantera Pool</h3>
 
-                <!-- Troneras -->
-                <div class="absolute w-5 h-5 rounded-full bg-black -left-1 -top-1"></div>
-                <div class="absolute w-5 h-5 rounded-full bg-black -right-1 -top-1"></div>
-                <div class="absolute w-5 h-5 rounded-full bg-black -left-1 -bottom-1"></div>
-                <div class="absolute w-5 h-5 rounded-full bg-black -right-1 -bottom-1"></div>
-                <div class="absolute w-5 h-5 rounded-full bg-black left-1/2 -translate-x-1/2 -top-1"></div>
-                <div class="absolute w-5 h-5 rounded-full bg-black left-1/2 -translate-x-1/2 -bottom-1"></div>
+    <p class="mt-3">
+        <a href="https://www.tiktok.com/@frchoortega" target="_blank"
+           class="text-white underline text-lg flex items-center justify-center gap-2">
+            <i class="fab fa-tiktok"></i> TikTok Oficial
+        </a>
+    </p>
 
-                <!-- Triángulo de bolas -->
-                <div class="absolute left-16 top-1/2 -translate-y-1/2">
-                    <div class="flex gap-1 mb-1 justify-center">
-                        <div class="w-6 h-6 rounded-full bg-[#FBC02D] flex items-center justify-center text-[9px] text-white font-bold shadow">1</div>
-                    </div>
-                    <div class="flex gap-1 mb-1 justify-center">
-                        <div class="w-6 h-6 rounded-full bg-[#E53935] flex items-center justify-center text-[9px] text-white font-bold shadow">3</div>
-                        <div class="w-6 h-6 rounded-full bg-[#1565C0] flex items-center justify-center text-[9px] text-white font-bold shadow">2</div>
-                    </div>
-                    <div class="flex gap-1 mb-1 justify-center">
-                        <div class="w-6 h-6 rounded-full bg-[#6A1B9A] flex items-center justify-center text-[9px] text-white font-bold shadow">4</div>
-                        <div class="w-6 h-6 rounded-full bg-[#00897B] flex items-center justify-center text-[9px] text-white font-bold shadow">6</div>
-                        <div class="w-6 h-6 rounded-full bg-black flex items-center justify-center text-[9px] text-white font-bold shadow">8</div>
-                    </div>
-                </div>
+    <p class="mt-3">
+        <a href="https://maps.app.goo.gl/eXAYutzzUvbaePiC8?g_st=ipc" target="_blank"
+           class="text-blue-400 underline flex items-center justify-center gap-2">
+            <i class="fas fa-map-marker-alt"></i> Ver ubicación en Google Maps
+        </a>
+    </p>
 
-                <!-- Bola blanca -->
-                <div class="absolute right-10 top-1/2
+    <p class="mt-10 text-white/70 text-sm">© 2024 Pantera Pool. Todos los derechos reservados.</p>
+</footer>
+
+
+<!-- WHATSAPP FLOTANTE SOLO CHAT -->
+<a href="https://wa.me/593993329290" target="_blank"
+   class="fixed bottom-6 right-6 bg-[#00E676] text-black p-4 rounded-full text-3xl shadow-xl z-30">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MODAL CONFIRMACIÓN CARRITO -->
+<div id="add-modal"
+     class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-200">
+    <div class="bg-[#03140d] border border-white/20 rounded-2xl p-6 w-11/12 max-w-sm shadow-2xl">
+        <h3 id="modal-product-name" class="text-lg font-bold text-[#00E676] mb-2"></h3>
+        <img id="modal-product-img" src="" alt="" class="w-full h-40 object-cover rounded mb-3">
+        <p id="modal-product-price" class="text-sm text-gray-200 mb-3"></p>
+
+        <div class="flex items-center justify-center gap-4 mb-4">
+            <button id="modal-minus"
+                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xl">-</button>
+            <span id="modal-qty" class="text-xl font-bold">1</span>
+            <button id="modal-plus"
+                    class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-xl">+</button>
+        </div>
+
+        <div class="flex gap-3">
+            <button id="modal-cancel"
+                    class="flex-1 bg-gray-700 text-white py-2 rounded-full text-sm font-semibold">
+                Cancelar
+            </button>
+            <button id="modal-confirm"
+                    class="flex-1 bg-[#00E676] text-black py-2 rounded-full text-sm font-bold">
+                Confirmar
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- JS -->
+<script>
+const products = [
+  { id:1, name:'Guante Pantera Pool', price:6.00, img:'guante-pantera.jpg', desc:'Guante estilizado Pantera Pool para mejor deslizamiento.' },
+  { id:2, name:'Virolas con instalación', price:10.00, img:'virolas-instalacion.jpg', desc:'Virolas profesionales con instalación incluida.' },
+  { id:3, name:'Portatiza tipo Yoyo', price:10.00, img:'portatiza-yoyo.jpg', desc:'Portatiza retráctil tipo yoyo para mayor comodidad.' },
+  { id:4, name:'Mantenimiento Diamond/IBS', price:35.00, img:'mantenimiento-taquilla-diamond-ibs.jpg', desc:'Mantenimiento con taquilla Diamond Black o IBS.' },
+  { id:5, name:'Tiza Triangle Americana', price:3.50, img:'tiza-triangle-americana.jpg', desc:'Tiza Triangle Americana original.' },
+  { id:6, name:'Tiza Master original', price:4.00, img:'tiza-master-original.jpg', desc:'Tiza Master original para golpe profesional.' },
+  { id:7, name:'Cambio taquilla arcoíris + supresor', price:30.00, img:'cambio-taquilla-arcoiris-supresor.jpg', desc:'Cambio de taquilla arcoíris con supresor de impacto.' },
+  { id:8, name:'Mesa de pool England (referencial)', price:0.00, img:'mesa-england.jpg', desc:'Mesa England para demostración. Cotización por WhatsApp.' }
+];
+
+let cart = {};
+let sharedLocation = null;
+
+// MODAL STATE
+let selectedProduct = null;
+let modalQty = 1;
+
+const productList = document.getElementById("product-list");
+const cartCountEl = document.getElementById("cart-count");
+const addModal = document.getElementById("add-modal");
+const modalName = document.getElementById("modal-product-name");
+const modalImg = document.getElementById("modal-product-img");
+const modalPrice = document.getElementById("modal-product-price");
+const modalQtyEl = document.getElementById("modal-qty");
+const modalMinus = document.getElementById("modal-minus");
+const modalPlus = document.getElementById("modal-plus");
+const modalCancel = document.getElementById("modal-cancel");
+const modalConfirm = document.getElementById("modal-confirm");
+
+// RENDER PRODUCTOS
+function renderProducts(){
+    productList.innerHTML = "";
+    products.forEach(p => {
+        productList.innerHTML += `
+        <div class="bg-black/40 p-4 rounded-xl shadow-xl">
+            <img src="${p.img}" class="w-full h-48 object-cover rounded" alt="${p.name}">
+            <h3 class="mt-3 font-bold text-lg">${p.name}</h3>
+            <p class="text-gray-300 text-sm">${p.desc}</p>
+            <p class="text-[#00E676] font-bold mt-2">$${p.price.toFixed(2)}</p>
+
+            <button onclick="openAddModal(${p.id})"
+                class="w-full bg-[#00E676] text-black py-2 rounded-full mt-4 font-bold">
+                Añadir al carrito
+            </button>
+        </div>`;
+    });
+}
+
+// MODAL
+function openAddModal(id){
+    selectedProduct = products.find(x => x.id === id);
+    if(!selectedProduct) return;
+
+    modalName.textContent = selectedProduct.name;
+    modalImg.src = selectedProduct.img;
+    modalPrice.textContent = `Precio unitario: $${selectedProduct.price.toFixed(2)}`;
+    modalQty = 1;
+    modalQtyEl.textContent = modalQty;
+
+    addModal.classList.remove("opacity-0","pointer-events-none");
+}
+
+function closeAddModal(){
+    addModal.classList.add("opacity-0","pointer-events-none");
+}
+
+modalMinus.addEventListener("click", () => {
+    if(modalQty > 1){
+        modalQty--;
+        modalQtyEl.textContent = modalQty;
+    }
+});
+
+modalPlus.addEventListener("click", () => {
+    modalQty++;
+    modalQtyEl.textContent = modalQty;
+});
+
+modalCancel.addEventListener("click", closeAddModal);
+
+modalConfirm.addEventListener("click", () => {
+    if(!selectedProduct) return;
+    addToCart(selectedProduct.id, modalQty);
+    closeAddModal();
+});
+
+// CARRITO
+function addToCart(id, qty){
+    const prod = products.find(p => p.id === id);
+    if(!prod) return;
+
+    if(cart[id]) cart[id].quantity += qty;
+    else cart[id] = { ...prod, quantity: qty };
+
+    updateCart();
+}
+
+function updateCart(){
+    let count = Object.values(cart).reduce((s,p)=>s+p.quantity, 0);
+    cartCountEl.textContent = count;
+}
+
+// NAVEGACIÓN
+function showPage(page){
+    document.getElementById("home-page").classList.add("hidden");
+    document.getElementById("checkout-page").classList.add("hidden");
+
+    document.getElementById(page+"-page").classList.remove("hidden");
+
+    if(page==="checkout") {
+        updateCheckout();
+    }
+}
+
+function updateCheckout(){
+    const empty = document.getElementById("cart-empty");
+    const content = document.getElementById("cart-content");
+    const summary = document.getElementById("checkout-summary");
+
+    if(Object.keys(cart).length===0){
+        empty.classList.remove("hidden");
+        content.classList.add("hidden");
+        return;
+    }
+
+    empty.classList.add("hidden");
+    content.classList.remove("hidden");
+
+    let total = 0;
+    summary.innerHTML = "";
+
+    for(const id in cart){
+        const item = cart[id];
+        total += item.price * item.quantity;
+
+        summary.innerHTML += `
+            <div class="flex justify-between border-b border-white/10 py-2">
+                <span>${item.quantity}x ${item.name}</span>
+                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
+        `;
+    }
+
+    summary.innerHTML += `
+        <div class="flex justify-between mt-4 text-xl font-bold">
+            <span>Total</span>
+            <span>$${total.toFixed(2)}</span>
+        </div>`;
+}
+
+// GEOLOCALIZACIÓN
+document.getElementById("share-location-btn").addEventListener("click", () => {
+    const status = document.getElementById("location-status");
+    if(!navigator.geolocation){
+        status.textContent = "Geolocalización no disponible.";
+        return;
+    }
+    status.textContent = "Obteniendo ubicación...";
+    navigator.geolocation.getCurrentPosition(pos=>{
+        const { latitude, longitude } = pos.coords;
+        sharedLocation = `https://www.google.com/maps?q=${latitude},${longitude}`;
+        status.textContent = "Ubicación compartida ✔️";
+    }, () => {
+        status.textContent = "No se pudo obtener la ubicación.";
+    });
+});
+
+// ENVIAR WHATSAPP
+document.getElementById("send-whatsapp").addEventListener("click", e => {
+    e.preventDefault();
+
+    if(Object.keys(cart).length===0) return;
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const comments = document.getElementById("comments").value.trim();
+
+    if(!name || !phone || !city) {
+        alert("Completa todos los campos obligatorios.");
+        return;
+    }
+
+    let msg = `¡Hola Pantera Pool! 👋 Quisiera hacer este pedido:\n\n`;
+
+    let total = 0;
+    for(const id in cart){
+        const item = cart[id];
+        msg += `*${item.quantity}x* ${item.name}\n`;
+        total += item.price * item.quantity;
+    }
+
+    msg += `\n*Total:* $${total.toFixed(2)}\n\n`;
+    msg += `*Mis datos:*\nNombre: ${name}\nWhatsApp: ${phone}\nCiudad: ${city}\n`;
+    if(comments) msg += `Comentarios: ${comments}\n`;
+    if(sharedLocation) msg += `Ubicación: ${sharedLocation}\n`;
+    msg += `\nEnvío por *Servientrega* 🚚`;
+
+    const url = `https://wa.me/593993329290?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+
+    cart = {};
+    updateCart();
+    document.getElementById("order-form").reset();
+    sharedLocation = null;
+    showPage("home");
+});
+
+
+// MINI JUEGO BREAKOUT CON BOLA 8
+(function(){
+    const canvas = document.getElementById('pool-breakout');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const tableColor = '#04402b';
+    const railColor = '#032117';
+
+    let ballRadius = 8;
+    let x, y, dx, dy;
+    let paddleHeight = 10;
+    let paddleWidth = 70;
+    let paddleX;
+    let rightPressed = false;
+    let leftPressed = false;
+    let brickRowCount = 3;
+    let brickColumnCount = 7;
+    let brickWidth = 36;
+    let brickHeight = 14;
+    let brickPadding = 4;
+    let brickOffsetTop = 40;
+    let brickOffsetLeft = 10;
+    let bricks = [];
+    let running = false;
+
+    const ballColors = ['#FBC02D','#E53935','#1565C0','#6A1B9A','#00897B','#F57C00','#9E9E9E'];
+
+    function initBricks(){
+        bricks = [];
+        for(let c=0;c<brickColumnCount;c++){
+            bricks[c]=[];
+            for(let r=0;r<brickRowCount;r++){
+                bricks[c][r]={x:0,y:0,status:1,color:ballColors[(c+r)%ballColors.length]};
+            }
+        }
+    }
+
+    function resetGame(){
+        x = canvas.width/2;
+        y = canvas.height-35;
+        dx = 3;
+        dy = -3;
+        paddleX = (canvas.width-paddleWidth)/2;
+        initBricks();
+        draw();
+    }
+
+    function drawTable(){
+        ctx.fillStyle = tableColor;
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.strokeStyle = railColor;
+        ctx.lineWidth = 12;
+        ctx.strokeRect(6,6,canvas.width-12,canvas.height-12);
+
+        // troneras
+        ctx.fillStyle = '#000';
+        const r = 7;
+        const pockets = [
+            [6,6],
+            [canvas.width-6,6],
+            [6,canvas.height-6],
+            [canvas.width-6,canvas.height-6],
+            [canvas.width/2,6],
+            [canvas.width/2,canvas.height-6]
+        ];
+        pockets.forEach(p=>{
+            ctx.beginPath();
+            ctx.arc(p[0],p[1],r,0,Math.PI*2);
+            ctx.fill();
+        });
+    }
+
+    function drawBricks(){
+        for(let c=0;c<brickColumnCount;c++){
+            for(let r=0;r<brickRowCount;r++){
+                if(bricks[c][r].status===1){
+                    const brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+                    const brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+                    bricks[c][r].x = brickX;
+                    bricks[c][r].y = brickY;
+                    ctx.beginPath();
+                    ctx.fillStyle = bricks[c][r].color;
+                    ctx.roundRect(brickX,brickY,brickWidth,brickHeight,4);
+                    ctx.fill();
+
+                    // número simulando bola
+                    ctx.fillStyle="#fff";
+                    ctx.font="9px Poppins";
+                    ctx.textAlign="center";
+                    ctx.textBaseline="middle";
+                    ctx.fillText((r*brickColumnCount+c+1),brickX+brickWidth/2,brickY+brickHeight/2);
+                }
+            }
+        }
+    }
+
+    function drawBall(){
+        ctx.beginPath();
+        ctx.fillStyle="#fff";
+        ctx.arc(x,y,ballRadius,0,Math.PI*2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle="#000";
+        ctx.arc(x,y,ballRadius-3,0,Math.PI*2);
+        ctx.fill();
+
+        ctx.fillStyle="#fff";
+        ctx.font="10px Poppins";
+        ctx.textAlign="center";
+        ctx.textBaseline="middle";
+        ctx.fillText("8",x,y);
+    }
+
+    function drawPaddle(){
+        ctx.beginPath();
+        ctx.fillStyle="#c49a6c";
+        ctx.roundRect(paddleX,canvas.height-paddleHeight-8,paddleWidth,paddleHeight,5);
+        ctx.fill();
+    }
+
+    function collisionDetection(){
+        for(let c=0;c<brickColumnCount;c++){
+            for(let r=0;r<brickRowCount;r++){
+                const b=bricks[c][r];
+                if(b.status===1){
+                    if(x>b.x && x<b.x+brickWidth && y> b.y && y<b.y+brickHeight){
+                        dy = -dy;
+                        b.status=0;
+                    }
+                }
+            }
+        }
+    }
+
+    function draw(){
+        drawTable();
+        drawBricks();
+        drawBall();
+        drawPaddle();
+    }
+
+    function step(){
+        if(!running) return;
+        drawTable();
+        drawBricks();
+        drawPaddle();
+        collisionDetection();
+
+        x += dx;
+        y += dy;
+
+        if(x+dx>canvas.width-14 || x+dx<14){ dx = -dx; }
+        if(y+dy<18){ dy = -dy; }
+        else if(y+dy>canvas.height-18){
+            if(x>paddleX && x<paddleX+paddleWidth){
+                dy = -dy;
+            } else {
+                running=false;
+                resetGame();
+                return;
+            }
+        }
+
+        drawBall();
+
+        if(rightPressed && paddleX<canvas.width-paddleWidth-10) paddleX+=5;
+        else if(leftPressed && paddleX>10) paddleX-=5;
+
+        requestAnimationFrame(step);
+    }
+
+    document.addEventListener("keydown",e=>{
+        if(e.key==="Right"||e.key==="ArrowRight") rightPressed=true;
+        else if(e.key==="Left"||e.key==="ArrowLeft") leftPressed=true;
+    });
+    document.addEventListener("keyup",e=>{
+        if(e.key==="Right"||e.key==="ArrowRight") rightPressed=false;
+        else if(e.key==="Left"||e.key==="ArrowLeft") leftPressed=false;
+    });
+
+    const startBtn=document.getElementById("game-start");
+    const resetBtn=document.getElementById("game-reset");
+
+    if(startBtn){
+        startBtn.addEventListener("click",()=>{
+            if(!running){
+                running=true;
+                requestAnimationFrame(step);
+            }
+        });
+    }
+    if(resetBtn){
+        resetBtn.addEventListener("click",()=>{
+            running=false;
+            resetGame();
+        });
+    }
+
+    resetGame();
+})();
+
+
+// INIT PRINCIPAL
+renderProducts();
+updateCart();
+</script>
+
+</body>
+</html>
