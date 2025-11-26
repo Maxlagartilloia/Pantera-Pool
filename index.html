@@ -22,44 +22,45 @@
             color: white;
         }
 
-        /* EMOJIS FLOTANTES 🎱 */
+        /* EMOJI FLOTANTE 🎱 SOLO BOLA 8 */
         .emoji-ball {
             position: fixed;
             top: -5vh;
-            font-size: 60px;
+            font-size: 70px;
             animation: fall-balls linear infinite;
-            opacity: 0.9;
+            opacity: 0.95;
             z-index: 0;
             pointer-events: none;
+            filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
         }
 
         @keyframes fall-balls {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(120vh) rotate(160deg); opacity: 0; }
+            100% { transform: translateY(120vh) rotate(180deg); opacity: 0; }
         }
     </style>
 </head>
 
 <body>
 
-<!-- EMOJIS DE BILLAR -->
+<!-- EMOJI FLOTANTE 🎱 -->
 <div id="billiard-emoji-container"></div>
 <script>
-    function createEmojiBalls() {
-        const container = document.getElementById("billiard-emoji-container");
-        const emojis = ["🎱"];
+  function createEmojiBalls() {
+    const container = document.getElementById("billiard-emoji-container");
+    const emoji = "🎱"; // SOLO bola 8
 
-        for (let i = 0; i < 14; i++) {
-            const e = document.createElement("div");
-            e.className = "emoji-ball";
-            e.style.left = Math.random() * 100 + "vw";
-            e.style.animationDuration = 10 + Math.random() * 10 + "s";
-            e.style.animationDelay = Math.random() * 5 + "s";
-            e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            container.appendChild(e);
-        }
+    for (let i = 0; i < 10; i++) {
+      const e = document.createElement("div");
+      e.className = "emoji-ball";
+      e.style.left = Math.random() * 100 + "vw";
+      e.style.animationDuration = 10 + Math.random() * 10 + "s";
+      e.style.animationDelay = Math.random() * 5 + "s";
+      e.textContent = emoji;
+      container.appendChild(e);
     }
-    createEmojiBalls();
+  }
+  createEmojiBalls();
 </script>
 
 
@@ -67,8 +68,9 @@
 <header class="bg-black/70 backdrop-blur-md sticky top-0 z-50 shadow-lg">
     <div class="container mx-auto px-5 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <img src="IMG-0305.png" class="h-16 drop-shadow-xl" alt="Logo Pantera Pool">
-            <span class="font-bold text-2xl text-[#00E676]">Pantera Pool</span>
+            <!-- LOGO MÁS GRANDE -->
+            <img src="IMG-0305.png" class="h-28 md:h-32 drop-shadow-xl" alt="Logo Pantera Pool">
+            <span class="font-bold text-2xl md:text-3xl text-[#00E676]">Pantera Pool</span>
         </div>
 
         <nav class="hidden md:flex gap-6 font-semibold">
@@ -93,7 +95,7 @@
             Accesorios de pool hechos para jugadores que quieren ganar 🎱
         </h1>
         <p class="mt-4 text-gray-200 max-w-2xl mx-auto">
-            Pantera Pool distribuye tacos, tizadas, virolas, repuestos y más. Envíos por **Servientrega** a todo Ecuador.
+            Pantera Pool distribuye tacos, tizadas, virolas, repuestos y más. Envíos por <strong>Servientrega</strong> a todo Ecuador.
         </p>
 
         <a href="#productos"
@@ -101,8 +103,6 @@
             Ver productos
         </a>
     </section>
-
-
 
     <!-- PRODUCTOS -->
     <section id="productos" class="py-16 px-6 relative z-10">
@@ -113,18 +113,17 @@
         </div>
     </section>
 
-
     <!-- EXPERIENCIA -->
     <section id="experiencia" class="py-20 px-6 relative z-10">
         <div class="container mx-auto bg-white/10 backdrop-blur-xl rounded-2xl p-10 shadow-2xl">
             <div class="grid md:grid-cols-2 gap-10">
-                <img src="mesa-england.jpg" class="rounded-xl shadow-xl object-cover w-full h-72">
+                <img src="mesa-england.jpg" class="rounded-xl shadow-xl object-cover w-full h-72" alt="Mesa England Pantera Pool">
 
                 <div>
                     <h3 class="text-3xl font-bold text-[#00E676]">Experiencia Pantera Pool</h3>
                     <p class="mt-4 text-gray-200">
                         Pantera Pool trabaja con salas de billar, clubes, bares y jugadores profesionales.
-                        Te asesoramos en cada compra y enviamos a todo Ecuador mediante **Servientrega**.
+                        Te asesoramos en cada compra y enviamos a todo Ecuador mediante <strong>Servientrega</strong>.
                     </p>
 
                     <!-- Botón de ubicación -->
@@ -205,23 +204,20 @@
 
 <!-- FOOTER -->
 <footer id="footer-contact" class="bg-black/70 mt-20 py-12 text-center">
-    <h3 class="text-xl font-bold text-[#00E676] mb-4">Contacto</h3>
+    <h3 class="text-xl font-bold text-[#00E676] mb-4">Pantera Pool</h3>
 
-    <p>
-        <a href="https://wa.me/593993329290" target="_blank"
-            class="text-[#00E676] font-bold text-lg underline">
-            WhatsApp directo: +593 99 332 9290
+    <p class="mt-3">
+        <a href="https://www.tiktok.com/@frchoortega" target="_blank"
+            class="text-white underline text-lg flex items-center justify-center gap-2">
+            <i class="fab fa-tiktok"></i> TikTok Oficial
         </a>
     </p>
 
     <p class="mt-3">
-        <a href="https://www.tiktok.com/@frchoortega" target="_blank"
-            class="text-white underline text-lg">TikTok Oficial</a>
-    </p>
-
-    <p class="mt-3">
         <a href="https://maps.app.goo.gl/eXAYutzzUvbaePiC8?g_st=ipc" target="_blank"
-           class="text-blue-400 underline">📍 Ver ubicación</a>
+           class="text-blue-400 underline flex items-center justify-center gap-2">
+           <i class="fas fa-map-marker-alt"></i> Ver ubicación en Google Maps
+        </a>
     </p>
 
     <p class="mt-10 text-white/70 text-sm">© 2024 Pantera Pool. Todos los derechos reservados.</p>
@@ -233,11 +229,18 @@
 </footer>
 
 
-<!-- WHATSAPP FLOTANTE -->
+<!-- WHATSAPP FLOTANTE SOLO CHAT -->
 <a href="https://wa.me/593993329290" target="_blank"
    class="fixed bottom-6 right-6 bg-[#00E676] text-black p-4 rounded-full text-3xl shadow-xl z-50">
     <i class="fab fa-whatsapp"></i>
 </a>
+
+<!-- TOAST CARRITO -->
+<div id="cart-toast"
+     class="fixed bottom-24 right-6 bg-black/80 text-white px-4 py-3 rounded-full shadow-xl text-sm flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+  <i class="fas fa-check text-[#00E676]"></i>
+  <span id="cart-toast-text">Producto añadido al carrito</span>
+</div>
 
 
 <!-- JS -->
@@ -262,7 +265,7 @@ function renderProducts(){
     products.forEach(p => {
         cont.innerHTML += `
         <div class="bg-black/40 p-4 rounded-xl shadow-xl">
-            <img src="${p.img}" class="w-full h-48 object-cover rounded">
+            <img src="${p.img}" class="w-full h-48 object-cover rounded" alt="${p.name}">
             <h3 class="mt-3 font-bold text-lg">${p.name}</h3>
             <p class="text-gray-300 text-sm">${p.desc}</p>
             <p class="text-[#00E676] font-bold mt-2">$${p.price.toFixed(2)}</p>
@@ -288,12 +291,24 @@ function changeQty(id, val){
     span.textContent = q;
 }
 
+function showToast(message){
+    const toast = document.getElementById("cart-toast");
+    const text = document.getElementById("cart-toast-text");
+    text.textContent = message;
+    toast.classList.remove("opacity-0","pointer-events-none");
+    setTimeout(() => {
+        toast.classList.add("opacity-0","pointer-events-none");
+    }, 2000);
+}
+
 function addToCart(id){
     let q = parseInt(document.getElementById("qty-"+id).textContent);
     if(cart[id]) cart[id].quantity += q;
     else cart[id] = { ...products.find(x=>x.id==id), quantity:q };
 
     updateCart();
+    const item = cart[id];
+    showToast(`${q}x ${item.name} añadido(s) al carrito`);
 }
 
 function updateCart(){
@@ -346,25 +361,30 @@ function updateCheckout(){
         </div>`;
 }
 
-
 document.getElementById("share-location-btn").addEventListener("click", () => {
+    if(!navigator.geolocation){
+        document.getElementById("location-status").textContent = "Geolocalización no disponible.";
+        return;
+    }
+    document.getElementById("location-status").textContent = "Obteniendo ubicación...";
     navigator.geolocation.getCurrentPosition(pos=>{
         const { latitude, longitude } = pos.coords;
         sharedLocation = `https://www.google.com/maps?q=${latitude},${longitude}`;
         document.getElementById("location-status").textContent = "Ubicación compartida ✔️";
+    }, () => {
+        document.getElementById("location-status").textContent = "No se pudo obtener la ubicación.";
     });
 });
-
 
 document.getElementById("send-whatsapp").addEventListener("click", e => {
     e.preventDefault();
 
     if(Object.keys(cart).length===0) return;
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const city = document.getElementById("city").value;
-    const comments = document.getElementById("comments").value;
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const comments = document.getElementById("comments").value.trim();
 
     if(!name || !phone || !city) {
         alert("Completa todos los campos obligatorios.");
@@ -384,7 +404,6 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
     msg += `*Mis datos:*\nNombre: ${name}\nWhatsApp: ${phone}\nCiudad: ${city}\n`;
     if(comments) msg += `Comentarios: ${comments}\n`;
     if(sharedLocation) msg += `Ubicación: ${sharedLocation}\n`;
-
     msg += `\nEnvío por *Servientrega* 🚚`;
 
     const url = `https://wa.me/593993329290?text=${encodeURIComponent(msg)}`;
@@ -392,6 +411,8 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
 
     cart = {};
     updateCart();
+    document.getElementById("order-form").reset();
+    sharedLocation = null;
     showPage("home");
 });
 
