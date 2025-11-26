@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantera Pool - Accesorios de Billar</title>
+    <title>Pantera Pool - Accesorios y Salón de Billar</title>
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -75,6 +75,7 @@
 
         <nav class="hidden md:flex gap-6 font-semibold">
             <a href="#productos" class="hover:text-[#00E676]">Productos</a>
+            <a href="#salon" class="hover:text-[#00E676]">Salón de billar</a>
             <a href="#experiencia" class="hover:text-[#00E676]">Por qué nosotros</a>
             <a href="#footer-contact" class="hover:text-[#00E676]">Contacto</a>
         </nav>
@@ -90,18 +91,25 @@
 
 <!-- HOME -->
 <main id="home-page">
+    <!-- HERO PRINCIPAL -->
     <section class="text-center py-20 px-6">
         <h1 class="text-4xl md:text-6xl font-extrabold text-[#00E676] drop-shadow-[0_0_8px_#00E676]">
-            Accesorios de pool hechos para jugadores que quieren ganar 🎱
+            Accesorios y mesas de pool para jugadores que quieren ganar 🎱
         </h1>
         <p class="mt-4 text-gray-200 max-w-2xl mx-auto">
-            Pantera Pool distribuye tacos, tizadas, virolas, repuestos y más. Envíos por <strong>Servientrega</strong> a todo Ecuador.
+            Pantera Pool distribuye tacos, tizadas, virolas, repuestos y más, y también cuenta con un salón de billar para que vengas con tu grupo de amigos. Envíos por <strong>Servientrega</strong> a todo Ecuador.
         </p>
 
-        <a href="#productos"
-           class="mt-8 inline-block bg-[#00E676] text-black font-bold px-8 py-3 rounded-full hover:bg-[#0aff7a]">
-            Ver productos
-        </a>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#productos"
+               class="inline-block bg-[#00E676] text-black font-bold px-8 py-3 rounded-full hover:bg-[#0aff7a]">
+                Ver productos
+            </a>
+            <a href="#salon"
+               class="inline-block bg-black/70 border border-white/30 text-white font-bold px-8 py-3 rounded-full hover:bg-black">
+                Reservar una mesa 🎱
+            </a>
+        </div>
     </section>
 
     <!-- PRODUCTOS -->
@@ -110,6 +118,65 @@
 
         <div id="product-list"
              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+    </section>
+
+    <!-- SECCIÓN SALÓN DE BILLAR -->
+    <section id="salon" class="py-16 px-6 relative z-10">
+        <!-- Portada grande -->
+        <div class="container mx-auto mb-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#00E676] mb-4">
+                        Salón de Billar Pantera Pool
+                    </h2>
+                    <p class="text-gray-200 mb-3">
+                        Además de los accesorios, Pantera Pool tiene su propio local con mesas profesionales de billar,
+                        ideal para venir con tu grupo de amigos, familia o compañeros de trabajo.
+                    </p>
+                    <p class="text-gray-200 mb-3">
+                        Puedes alquilar la mesa por horas, organizar mini torneos, ver partidos y disfrutar en un ambiente seguro,
+                        cómodo y 100% billarero.
+                    </p>
+                    <p class="text-gray-200 mb-4">
+                        Escríbenos por WhatsApp para reservar tu mesa y consultar disponibilidad de horarios.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://wa.me/593993329290?text=Hola%20Pantera%20Pool,%20quiero%20reservar%20una%20mesa%20de%20billar."
+                           target="_blank"
+                           class="bg-[#00E676] text-black font-bold px-6 py-2 rounded-full flex items-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Reservar mesa
+                        </a>
+                        <a href="https://maps.app.goo.gl/eXAYutzzUvbaePiC8?g_st=ipc"
+                           target="_blank"
+                           class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full font-semibold flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt"></i> Cómo llegar
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <!-- Portada del local -->
+                    <img src="portada-local.jpg"
+                         alt="Salón de billar Pantera Pool"
+                         class="w-full h-72 md:h-80 object-cover rounded-2xl shadow-2xl border border-white/10">
+                </div>
+            </div>
+        </div>
+
+        <!-- Galería -->
+        <div class="container mx-auto">
+            <h3 class="text-2xl font-bold text-center text-[#00E676] mb-6">Galería del local</h3>
+            <p class="text-center text-gray-200 mb-6 text-sm">
+                Algunas vistas del billar, mesas, ambiente y detalles del negocio Pantera Pool.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="local-1.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 1">
+                <img src="local-2.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 2">
+                <img src="local-3.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 3">
+                <img src="local-4.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 4">
+                <img src="local-5.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 5">
+                <img src="local-6.jpg" class="w-full h-32 md:h-40 object-cover rounded-xl border border-white/10" alt="Pantera Pool local 6">
+            </div>
         </div>
     </section>
 
@@ -123,19 +190,74 @@
                     <h3 class="text-3xl font-bold text-[#00E676]">Experiencia Pantera Pool</h3>
                     <p class="mt-4 text-gray-200">
                         Pantera Pool trabaja con salas de billar, clubes, bares y jugadores profesionales.
-                        Te asesoramos en cada compra y enviamos a todo Ecuador mediante <strong>Servientrega</strong>.
+                        Te asesoramos en cada compra y enviamos accesorios a todo Ecuador mediante <strong>Servientrega</strong>.
                     </p>
+                    <p class="mt-3 text-gray-200">
+                        Si visitas el local, vas a encontrar mesas bien mantenidas, repuestos profesionales y atención directa
+                        de un jugador apasionado por el deporte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Botón de ubicación -->
+    <!-- BARRA CTA ANTES DEL FOOTER -->
+    <section class="px-6 pb-4">
+        <div class="container mx-auto bg-gradient-to-r from-[#00E676] via-[#44ff9c] to-[#00E676] rounded-2xl p-[2px] shadow-xl">
+            <div class="bg-[#03140d] rounded-2xl px-6 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-[#00E676]">
+                        ¿Te antoja una noche de billar?
+                    </h3>
+                    <p class="text-gray-200 text-sm md:text-base">
+                        Junta a tu grupo y ven al salón Pantera Pool. Mesas profesionales, buen ambiente y accesorios
+                        de primera en el mismo lugar.
+                    </p>
+                </div>
+                <div class="flex gap-3">
+                    <a href="https://wa.me/593993329290?text=Hola%20Pantera%20Pool,%20quiero%20ir%20con%20mi%20grupo%20al%20billar."
+                       target="_blank"
+                       class="bg-[#00E676] text-black font-bold px-6 py-2 rounded-full flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Reservar ahora
+                    </a>
                     <a href="https://maps.app.goo.gl/eXAYutzzUvbaePiC8?g_st=ipc"
                        target="_blank"
-                       class="mt-6 inline-block bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full font-bold">
-                        📍 Cómo llegar
+                       class="bg-black/70 border border-white/30 px-5 py-2 rounded-full text-sm md:text-base flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i> Ver ubicación
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- JUEGO EN LA PÁGINA PRINCIPAL -->
+    <section id="juego" class="py-16 px-6">
+        <h3 class="text-center text-3xl font-bold text-[#00E676] mb-2">
+            Juega pool mientras esperas tu pedido 🎱
+        </h3>
+        <p class="text-center text-gray-200 mb-6">
+            Controla la bola 8 para romper los bloques tipo bolas de billar. Es un mini-juego para pasar el rato 😄
+        </p>
+
+        <div class="flex justify-center">
+            <canvas id="pool-breakout" width="340" height="220"
+                    class="rounded-2xl border border-white/20 bg-[#04402b] shadow-xl"></canvas>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-5">
+            <button id="game-start"
+                    class="bg-[#00E676] text-black font-bold px-6 py-2 rounded-full flex items-center gap-2">
+                Disparar <span>🎱</span>
+            </button>
+            <button id="game-reset"
+                    class="bg-black/70 border border-white/30 px-6 py-2 rounded-full text-sm">
+                Reiniciar mesa
+            </button>
+        </div>
+    </section>
+</main>
+
+
 
 <!-- CHECKOUT -->
 <main id="checkout-page" class="hidden px-6 py-16">
@@ -265,7 +387,9 @@ const products = [
   { id:3, name:'Portatiza tipo Yoyo', price:10.00, img:'portatiza-yoyo.jpg', desc:'Portatiza retráctil tipo yoyo para mayor comodidad.' },
   { id:4, name:'Mantenimiento Diamond/IBS', price:35.00, img:'mantenimiento-taquilla-diamond-ibs.jpg', desc:'Mantenimiento con taquilla Diamond Black o IBS.' },
   { id:5, name:'Tiza Triangle Americana', price:3.50, img:'tiza-triangle-americana.jpg', desc:'Tiza Triangle Americana original.' },
+  { id:6, name:'Tiza Master original', price:4.00, img:'tiza-master-original.jpg', desc:'Tiza Master original para golpe profesional.' },
   { id:7, name:'Cambio taquilla arcoíris + supresor', price:30.00, img:'cambio-taquilla-arcoiris-supresor.jpg', desc:'Cambio de taquilla arcoíris con supresor de impacto.' },
+  { id:8, name:'Mesa de pool England (referencial)', price:0.00, img:'mesa-england.jpg', desc:'Mesa England para demostración. Cotización por WhatsApp.' }
 ];
 
 let cart = {};
@@ -606,14 +730,6 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
     function draw(){
         drawTable();
         drawBricks();
-        drawBall();
-        drawPaddle();
-    }
-
-    function step(){
-        if(!running) return;
-        drawTable();
-        drawBricks();
         drawPaddle();
         collisionDetection();
 
@@ -637,7 +753,7 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
         if(rightPressed && paddleX<canvas.width-paddleWidth-10) paddleX+=5;
         else if(leftPressed && paddleX>10) paddleX-=5;
 
-        requestAnimationFrame(step);
+        if(running) requestAnimationFrame(draw);
     }
 
     document.addEventListener("keydown",e=>{
@@ -656,14 +772,14 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
         startBtn.addEventListener("click",()=>{
             if(!running){
                 running=true;
-                requestAnimationFrame(step);
+                requestAnimationFrame(draw);
             }
         });
     }
     if(resetBtn){
         resetBtn.addEventListener("click",()=>{
-            running=false;
-            resetGame();
+        running=false;
+        resetGame();
         });
     }
 
