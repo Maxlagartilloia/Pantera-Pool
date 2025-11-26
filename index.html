@@ -316,6 +316,9 @@ const modalPlus = document.getElementById("modal-plus");
 const modalCancel = document.getElementById("modal-cancel");
 const modalConfirm = document.getElementById("modal-confirm");
 
+let poolGameInitialized = false;
+
+// RENDER PRODUCTOS
 function renderProducts(){
     productList.innerHTML = "";
     products.forEach(p => {
@@ -334,6 +337,7 @@ function renderProducts(){
     });
 }
 
+// MODAL
 function openAddModal(id){
     selectedProduct = products.find(x => x.id === id);
     if(!selectedProduct) return;
@@ -371,6 +375,7 @@ modalConfirm.addEventListener("click", () => {
     closeAddModal();
 });
 
+// CARRITO
 function addToCart(id, qty){
     const prod = products.find(p => p.id === id);
     if(!prod) return;
@@ -386,13 +391,17 @@ function updateCart(){
     cartCountEl.textContent = count;
 }
 
+// NAVEGACIÓN
 function showPage(page){
     document.getElementById("home-page").classList.add("hidden");
     document.getElementById("checkout-page").classList.add("hidden");
 
     document.getElementById(page+"-page").classList.remove("hidden");
 
-    if(page==="checkout") updateCheckout();
+    if(page==="checkout") {
+        updateCheckout();
+        initPoolGame();
+    }
 }
 
 function updateCheckout(){
@@ -489,9 +498,14 @@ document.getElementById("send-whatsapp").addEventListener("click", e => {
     showPage("home");
 });
 
-// JUEGO DE BILLAR
-const gameCanvas = document.getElementById("pool-game");
-if(gameCanvas){
+// JUEGO DE BILLAR - SE INICIALIZA AL ENTRAR AL CHECKOUT
+function initPoolGame(){
+    if (poolGameInitialized) return;
+    const gameCanvas = document.getElementById("pool-game");
+    if(!gameCanvas) return;
+
+    poolGameInitialized = true;
+
     const ctx = gameCanvas.getContext("2d");
     let ballX, ballY, ballVX, running;
 
@@ -557,14 +571,21 @@ if(gameCanvas){
         if(running) requestAnimationFrame(loop);
     }
 
-    document.getElementById("game-shoot").addEventListener("click", () => {
-        if(running) return;
-        ballVX = 4;
-        running = true;
-        requestAnimationFrame(loop);
-    });
+    const shootBtn = document.getElementById("game-shoot");
+    const resetBtn = document.getElementById("game-reset");
 
-    document.getElementById("game-reset").addEventListener("click", resetGame);
+    if(shootBtn){
+        shootBtn.addEventListener("click", () => {
+            if(running) return;
+            ballVX = 4;
+            running = true;
+            requestAnimationFrame(loop);
+        });
+    }
+
+    if(resetBtn){
+        resetBtn.addEventListener("click", resetGame);
+    }
 
     resetGame();
 }
