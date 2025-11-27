@@ -157,10 +157,12 @@
                     </div>
                 </div>
                 <div>
-                    <!-- Portada del local -->
-                    <img src="portada-local.jpg"
-                         alt="Salón de billar Pantera Pool"
-                         class="w-full h-72 md:h-80 object-cover rounded-2xl shadow-2xl border border-white/10">
+                    <!-- Portada del local clickeable al mapa -->
+                    <a href="https://maps.app.goo.gl/eXAYutzzUvbaePiC8?g_st=ipc" target="_blank">
+                        <img src="portada-local.jpg"
+                             alt="Salón de billar Pantera Pool"
+                             class="w-full h-72 md:h-80 object-cover rounded-2xl shadow-2xl border border-white/10">
+                    </a>
                 </div>
             </div>
         </div>
@@ -234,17 +236,35 @@
 
     <!-- JUEGO TETRIS -->
     <section id="juego" class="py-16 px-6">
-        <h3 class="text-center text-3xl font-bold text-[#00E676] mb-2">
+        <h3 class="text-center text-3xl font-bold text-[#00E676] mb-6">
             Tetris billarero mientras esperas tu pedido 🎱
         </h3>
-        <p class="text-center text-gray-200 mb-6">
-            Mueve las piezas con las flechas del teclado (⬅️ ➡️ ⬇️) y rota con la flecha ↑.
-            Solo es para divertirse mientras armas tu pedido.
-        </p>
 
         <div class="flex justify-center">
             <canvas id="tetris-canvas" width="200" height="400"
                     class="rounded-2xl border border-white/20 bg-[#02261a] shadow-xl"></canvas>
+        </div>
+
+        <!-- Controles táctiles para móvil -->
+        <div class="mt-6 flex flex-col items-center gap-3">
+            <div class="flex gap-4">
+                <button id="tetris-left"
+                        class="w-12 h-12 rounded-full bg-black/60 border border-white/30 flex items-center justify-center text-2xl">
+                    ⬅️
+                </button>
+                <button id="tetris-rotate"
+                        class="w-12 h-12 rounded-full bg-black/60 border border-white/30 flex items-center justify-center text-2xl">
+                    🔄
+                </button>
+                <button id="tetris-right"
+                        class="w-12 h-12 rounded-full bg-black/60 border border-white/30 flex items-center justify-center text-2xl">
+                    ➡️
+                </button>
+            </div>
+            <button id="tetris-down"
+                    class="w-24 h-12 rounded-full bg-black/60 border border-white/30 flex items-center justify-center text-2xl">
+                ⬇️
+            </button>
         </div>
     </section>
 </main>
@@ -592,7 +612,7 @@ document.getElementById("send-whatsapp").addEventListener("click", function (e) 
 });
 
 
-// MINI JUEGO TETRIS (teclado: flechas)
+// MINI JUEGO TETRIS (teclado + botones táctiles)
 (function() {
     const canvas = document.getElementById('tetris-canvas');
     if (!canvas) return;
@@ -606,8 +626,8 @@ document.getElementById("send-whatsapp").addEventListener("click", function (e) 
 
     const colors = [
         null,
-        '#FBC02D', // pieza 1
-        '#E53935', // pieza 2
+        '#FBC02D',
+        '#E53935',
         '#1565C0',
         '#6A1B9A',
         '#00E676',
@@ -791,12 +811,24 @@ document.getElementById("send-whatsapp").addEventListener("click", function (e) 
         requestAnimationFrame(update);
     }
 
+    // Controles por teclado
     document.addEventListener('keydown', e=>{
         if(e.key==='ArrowLeft') playerMove(-1);
         else if(e.key==='ArrowRight') playerMove(1);
         else if(e.key==='ArrowDown') playerDrop();
         else if(e.key==='ArrowUp') playerRotate(1);
     });
+
+    // Controles táctiles
+    const btnLeft   = document.getElementById('tetris-left');
+    const btnRight  = document.getElementById('tetris-right');
+    const btnDown   = document.getElementById('tetris-down');
+    const btnRotate = document.getElementById('tetris-rotate');
+
+    if(btnLeft)   btnLeft.addEventListener('click', () => playerMove(-1));
+    if(btnRight)  btnRight.addEventListener('click', () => playerMove(1));
+    if(btnDown)   btnDown.addEventListener('click', () => playerDrop());
+    if(btnRotate) btnRotate.addEventListener('click', () => playerRotate(1));
 
     playerReset();
     update();
